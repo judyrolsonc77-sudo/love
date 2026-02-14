@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>To My Love</title> <!-- 浏览器标�?-->
+<title>To My Love</title> <!-- 浏览器标题 -->
 <style>
-/* --- 样式部分开�?(不用�? --- */
+/* --- 样式部分开始 (不用改) --- */
 :root {
   --primary: #ff8fa3;
   --bg: #120c1c;
@@ -64,7 +64,7 @@ body {
 .music-control.playing { animation-play-state: running; }
 .music-control.paused { animation-play-state: paused; opacity: 0.5; }
 
-/* 主容�?*/
+/* 主容器 */
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -160,7 +160,7 @@ body {
 <!-- 音乐图标 -->
 <div class="music-control" id="musicBtn" onclick="toggleMusic()">🎵</div>
 
-<!-- 1. 开场封�?-->
+<!-- 1. 开场封面 -->
 <div class="cover-screen" id="cover" onclick="startJourney()">
   <div class="heart-btn">❤️</div>
   <!-- 修改这里：封面提示语 -->
@@ -170,7 +170,7 @@ body {
 <!-- 背景飘心 -->
 <div class="bg-hearts" id="bgHearts"></div>
 
-<!-- 2. 主内容区�?-->
+<!-- 2. 主内容区域 -->
 <div class="container" id="main">
   
   <!-- 修改这里：主标题 -->
@@ -179,51 +179,51 @@ body {
   <!-- 照片 1 -->
   <div class="card" style="--rot: -2deg">
     <img src="photos/1.jpg" alt="photo1">
-    <!-- 修改这里：照�?下面的文�?-->
-    <p>嚯嚯�?br>石头�?/p>
+    <!-- 修改这里：照片1下面的文字 -->
+    <p>嚯嚯嚯<br>石头！</p>
   </div>
 
   <!-- 照片 2 -->
   <div class="card" style="--rot: 2deg">
     <img src="photos/2.jpg" alt="photo2">
-    <!-- 修改这里：照�?下面的文�?-->
+    <!-- 修改这里：照片2下面的文字 -->
     <p>比心💗</p>
   </div>
 
   <!-- 照片 3 -->
   <div class="card" style="--rot: -1deg">
     <img src="photos/3.jpg" alt="photo3">
-    <!-- 修改这里：照�?下面的文�?-->
+    <!-- 修改这里：照片3下面的文字 -->
     <p>比个大的💗</p>
   </div>
 
   <!-- 照片 4 -->
   <div class="card" style="--rot: 3deg">
     <img src="photos/4.jpg" alt="photo4">
-    <!-- 修改这里：照�?下面的文�?-->
-    <p>鼻孔也在朝你比心哦�?/p>
+    <!-- 修改这里：照片4下面的文字 -->
+    <p>鼻孔也在朝你比心哦。</p>
   </div>
 
   <!-- 照片 5 -->
   <div class="card" style="--rot: -3deg">
     <img src="photos/5.jpg" alt="photo5">
-    <!-- 修改这里：照�?下面的文�?-->
-    <p>给冰雪大世界也比个心�?/p>
+    <!-- 修改这里：照片5下面的文字 -->
+    <p>给冰雪大世界也比个心。</p>
   </div>
 
   <!-- 照片 6 -->
   <div class="card" style="--rot: 1deg">
     <img src="photos/6.jpg" alt="photo6">
-    <!-- 修改这里：照�?下面的文�?-->
-    <p>你好呀，小太阳�?/p>
+    <!-- 修改这里：照片6下面的文字 -->
+    <p>你好呀，小太阳。</p>
   </div>
 
   <!-- 3. 底部结尾 -->
   <div class="footer card" >
     <!-- 修改这里：结尾大标题 -->
-    <h2>爱你呦�?/h2>
-    <!-- 修改这里：结尾小�?-->
-    <p>From: 永远爱你的小计同�?/p>
+    <h2>爱你呦💕</h2>
+    <!-- 修改这里：结尾小字 -->
+    <p>From: 永远爱你的小计同学</p>
     <br>
     <div style="font-size: 30px;">💕</div>
   </div>
@@ -238,7 +238,7 @@ function createHearts() {
   for(let i=0; i<count; i++) {
     const heart = document.createElement('div');
     heart.className = 'heart-particle';
-    heart.innerHTML = '�?;
+    heart.innerHTML = '❤';
     heart.style.left = Math.random() * 100 + '%';
     heart.style.fontSize = (10 + Math.random() * 20) + 'px';
     heart.style.animationDuration = (4 + Math.random() * 5) + 's';
@@ -265,7 +265,7 @@ function toggleMusic() {
   isPlaying = !isPlaying;
 }
 
-// 点击封面开�?
+// 点击封面开始
 function startJourney() {
   const cover = document.getElementById('cover');
   const main = document.getElementById('main');
@@ -274,7 +274,7 @@ function startJourney() {
   music.play().then(() => {
     isPlaying = true;
     musicBtn.classList.add('playing');
-  }).catch(e => console.log('需要用户交互才能播�?));
+  }).catch(e => console.log('需要用户交互才能播放'));
   
   musicBtn.style.opacity = '1';
   cover.classList.add('hidden');
@@ -282,11 +282,11 @@ function startJourney() {
   setTimeout(() => {
     cover.style.display = 'none';
     main.classList.add('show');
-    checkScroll(); // 立即检查一�?
+    checkScroll(); // 立即检查一次
   }, 1000);
 }
 
-// 滚动检�?
+// 滚动检测
 function checkScroll() {
   const elements = document.querySelectorAll('.card');
   const windowHeight = window.innerHeight;
